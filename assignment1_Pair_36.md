@@ -66,8 +66,7 @@
 ---
 
 ## TASK 2
-### STRIDE: Spoofing (Identity Forgery) + Real-World Examples
-
+### STRIDE: Spoofing 
 ---
 
 ###  Threat 1: Token Reuse via Phishing
@@ -136,6 +135,7 @@ In October 2020, attackers launched a phishing campaign targeting Office 365 use
 (https://cirt.gy/article/microsoft-teams-phishing-attack-targets-office-365-users-(22nd-october-2020)/)
 
 ---
+### STRIDE: Tampering
 ###  Threat 4: Manipulated Media Files to Mislead Verification Results
 
 **(a) Potential Attacker**:  
@@ -198,6 +198,7 @@ An attacker with access to the Admin Console (C8) uploads a tampered AI model th
 In 2018, Tesla's internal cloud containers were exploited to deploy unauthorized cryptocurrency miners due to overly permissive deployment access.
 
 ---
+##  STRIDE: Repudiation 
 ### Threat 7: User Denies Uploading Sensitive Media
 
 **(a) Potential Attacker**:  
@@ -260,6 +261,7 @@ A user upgrades to a premium subscription and submits payment details via C2. La
 Platforms like Stripe and PayPal often face user disputes where customers deny having authorized recurring payments. If the platform does not retain sufficient logs, financial liability often falls on the provider.
 
 ---
+##  STRIDE: Information Disclosure
 ###  Threat 10: Man-in-the-Middle Attack Capturing Authentication Token
 
 **(a) Potential Attacker**:  
@@ -322,7 +324,7 @@ The frontend unintentionally exposes internal logs or data fragments in API resp
 In 2018, Facebook's Graph API incident allowed developers to access private data from millions of users due to insufficient permission checks on API endpoints.
 
 ---
-
+## STRIDE: Denial of Service 
 ### Threat 13: Mass Upload Flooding the Verification Queue
 
 **(a) Potential Attacker**:  
@@ -385,6 +387,7 @@ An attacker uses scripts to repeatedly trigger upgrade or payment calls via the 
 In 2021, Shopify merchants experienced site-wide checkout failures after excessive webhook calls to Stripe caused payment systems to lock or suspend access.
 
 ---
+##  STRIDE: Elevation of Privilege
 ### Threat 16: Free User Gains Access to Premium Features via API Tampering
 
 **(a) Potential Attacker**:  
