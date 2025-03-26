@@ -52,17 +52,18 @@
 
 ###  Diagram Explanation  
 
-> The architecture diagram above illustrates the core components and trust boundaries of the VeriLens system. The system is composed of eight major components, grouped into four trust boundaries based on control authority.
->
-> - **TB1 (User-Controlled Zone)** contains the user's browser (**C1**), through which users interact with the system by uploading media, managing their account, or accessing verification results. 
->
-> - **TB2 (VeriLens-Controlled Zone)** includes the main infrastructure operated by the VeriLens team: the web frontend (**C2**), session and rate limiting module (**C4**), AI-based verification engine (**C5**), central database (**C6**), and internal admin console (**C8**). These components cooperate to manage the core workflow: user request handling, identity/session management, media verification, result storage, and system maintenance.
->
-> - **TB3 (Identity Provider)** contains the third-party identity provider (**C3**, e.g., Google or Okta) used for authentication. During login, users are redirected to the IdP, which verifies credentials and returns an authentication token to the web frontend. This inbound token transmission represents a critical trust interface and is explicitly marked in the diagram.
->
-> - **TB4 (Billing Service Provider)** includes the external billing platform (**C7**, e.g., Stripe), which handles all payment-related operations. The web frontend collects billing details (e.g., credit card info) from the user and securely transmits them to the billing provider. VeriLens does not store any financial data locally. Periodically, usage metrics are sent from the VeriLens system to the billing service to trigger charges.
->
-> Arrows in the diagram indicate legitimate communication channels between components, with labels showing the type of sensitive data transmitted. These include user-provided media, authentication tokens, usage records, verification results, and billing data. Each communication crossing a trust boundary is a potential security concern and will be analyzed in detail in Task 2 using the STRIDE framework.
+ The architecture diagram above illustrates the core components and trust boundaries of the VeriLens system. The system is composed of eight major components, grouped into four trust boundaries based on control authority.
+
+ - **TB1 (User-Controlled Zone)** contains the user's browser (**C1**), through which users interact with the system by uploading media, managing their account, or accessing verification results. 
+
+ - **TB2 (VeriLens-Controlled Zone)** includes the main infrastructure operated by the VeriLens team: the web frontend (**C2**), session and rate limiting module (**C4**), AI-based verification engine (**C5**), central database (**C6**), and internal admin console (**C8**). These components cooperate to manage the core workflow: user request handling, identity/session management, media verification, result storage, and system maintenance.
+
+ - **TB3 (Identity Provider)** contains the third-party identity provider (**C3**, e.g., Google or Okta) used for authentication. During login, users are redirected to the IdP, which verifies credentials and returns an authentication token to the web frontend. This inbound token transmission represents a critical trust interface and is explicitly marked in the diagram.
+
+ - **TB4 (Billing Service Provider)** includes the external billing platform (**C7**, e.g., Stripe), which handles all payment-related operations. The web frontend collects billing details (e.g., credit card info) from the user and securely transmits them to the billing provider. VeriLens does not store any financial data locally. Periodically, usage metrics are sent from the VeriLens system to the billing service to trigger charges.
+
+ Arrows in the diagram indicate legitimate communication channels between components, with labels showing the type of sensitive data transmitted. These include user-provided media, authentication tokens, usage records, verification results, and billing data. Each communication crossing a trust boundary is a potential security concern and will be analyzed in detail in Task 2 using the STRIDE framework.
+
 ---
 
 ## TASK 2
@@ -216,7 +217,7 @@ A user uploads a media file (e.g., a manipulated video as evidence) and receives
 - Trust Boundary: TB1 → TB2
 
 **Real-World Example**:  
-In legal evidence management systems, users frequently deny uploading files. Similar denial patterns have been observed in abuse complaints on platforms like YouTube, where accountability logs are often insufficient.
+Non-repudiation is a critical requirement in e-commerce systems such as Amazon or eBay. These platforms maintain transaction logs recording customer orders, payments, and shipping details to ensure that users cannot deny having placed an order. Similarly, in platforms like VeriLens, the absence of audit logs for media uploads could allow users to deny their actions post hoc, especially in scenarios involving disputed verification outcomes.(https://mcsi-library.readthedocs.io/articles/2023/09/ediscovery-data-recovery-and-non-repudiation-controls.html)
 
 ---
 
@@ -258,7 +259,7 @@ A user upgrades to a premium subscription and submits payment details via C2. La
 - Trust Boundary: TB2 → TB4
 
 **Real-World Example**:  
-Platforms like Stripe and PayPal often face user disputes where customers deny having authorized recurring payments. If the platform does not retain sufficient logs, financial liability often falls on the provider.
+In the Chinese livestreaming and gaming industries, numerous fraud cases have been documented where adults pretend to be minors to request refunds for previous in-app purchases or tipping transactions. According to a 2023 report by Sichuan's Jinjiang Procuratorate, over 60% of refund requests were proven to be fraudulent. These actions exploit refund policies intended to protect minors and can lead to significant losses for platforms and content creators. This mirrors the risk in VeriLens where users may deny having submitted payment for premium services without sufficient non-repudiation mechanisms in place.(https://www.163.com/dy/article/IHQB5OO10514M975.html)
 
 ---
 ##  STRIDE: Information Disclosure
@@ -279,7 +280,7 @@ A user accesses the VeriLens web application over an insecure network (e.g., pub
 - Trust Boundary: TB1 → TB2
 
 **Real-World Example**:  
-The 2010 Firesheep browser extension demonstrated that login cookies on unsecured networks could be intercepted, allowing attackers to hijack Facebook, Twitter, and other web sessions with ease.
+The 2010 Firesheep browser extension demonstrated that login cookies on unsecured networks could be intercepted, allowing attackers to hijack Facebook, Twitter, and other web sessions with ease.(https://www.theguardian.com/technology/blog/2010/oct/25/firefox-extension-firesheep-wi-fi)
 
 ---
 
@@ -300,7 +301,7 @@ An attacker gains access to the database (C6) and retrieves stored user-uploaded
 - Trust Boundary: TB2 (internal zone)
 
 **Real-World Example**:  
-In the 2019 Canva breach, attackers accessed and extracted unencrypted user data, including full names, emails, and operation histories.
+In 2018, malicious actors exploited a misconfigured API to access India’s Aadhaar identity database, exposing personal information of over 1.1 billion citizens, including names, addresses, biometric data, and linked bank account details. The API had no proper access controls and the data was unencrypted, allowing attackers to sell access to this sensitive information for as little as $7. The breach demonstrated the severe consequences of unprotected at-rest data and missing database-layer encryption or authorization mechanisms.(https://www.csoonline.com/article/534628/the-biggest-data-breaches-of-the-21st-century.html)
 
 ---
 
@@ -450,47 +451,3 @@ The attacker intercepts and forges a fake "payment success" response from the bi
 Multiple reports across Stripe and PayPal communities have exposed weaknesses where fake client-side responses granted users unauthorized access to premium features in single-page applications.
 
 ---
-
-## TASK 2
-
----
-###  Threat 1: Token Reuse via Phishing 
-**For Individuals**:
-Attackers can steal user information, such as uploaded photos and account details, and for paying users, this may lead to unauthorized actions that cause direct financial loss.
-
-**For  VeriLens**:
-If this incident becomes public, it will harm the company’s image and cause current or potential partners to move to more secure companies, resulting in both reputational and financial losses.
-
-**For  government and society**:
-Since the government is also the customer of this system, its data may be stolen, leading to information leakage and allowing attackers to spread rumors that lower public trust.
-
-**For various companies involved in the system**:
-Attackers can use stolen identities to acquire information and sell it to competitors, putting these companies at a disadvantage in the market.
-
----
-
-###  Threat 2: Malicious Insider Reusing Admin Credentials
-**For Individuals**:
-If malicious insiders use admin credentials to access user data, it may lead to personal information being leaked, and the attacker might even collect and sell user data for illegal profit.
-
-**For  VeriLens**:
-This could trigger internal investigations to determine how many individuals were involved and might lead to legal disputes. Once the incident becomes public, the company's social influence would decline, and trust in VeriLens would drop, negatively affecting its business operations and revenue.
-
-**For  government and society**:
-When such security incidents are exposed publicly, they undermine public trust in relevant institutions or technology platforms, like VeriLens, especially in sectors handling sensitive information. If the leaked data contains sensitive political or social details, it could draw significant public attention and even lead to social unrest.
-
-**For various companies involved in the system**:
-Since companies within the system rely on the VeriLens platform for services, malicious insider actions could cause sensitive data leaks across these organizations. As a result, clients may terminate their partnerships due to privacy concerns, putting these companies at a competitive disadvantage.
-
-### Threat 3: Fake Web Frontend for Phishing
-**For Individuals**:
-Users' account credentials are likely to be stolen, allowing attackers to log in and steal personal data and uploaded files; if the user is a paying customer, the attacker can directly access premium features, thereby harming the user's interests.
-
-**For  VeriLens**:
-If this phishing attack is exposed, it will severely damage VeriLens's brand reputation and user trust, leading to customer loss and a decline in business.
-
-**For  government and society**:
-If attackers use the fake website to steal information related to government or public institutions, it will undermine public trust in digital platforms and government bodies, potentially leading to social instability.
-
-**For various companies involved in the system**:
-Since companies rely on the VeriLens platform for services, falling for a phishing website may lead to the leakage of their customer data and proprietary information, causing them to lose clients and market share.
