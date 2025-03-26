@@ -450,3 +450,47 @@ The attacker intercepts and forges a fake "payment success" response from the bi
 Multiple reports across Stripe and PayPal communities have exposed weaknesses where fake client-side responses granted users unauthorized access to premium features in single-page applications.
 
 ---
+
+## TASK 2
+
+---
+###  Threat 1: Token Reuse via Phishing 
+**For Individuals**:
+Attackers can steal user information, such as uploaded photos and account details, and for paying users, this may lead to unauthorized actions that cause direct financial loss.
+
+**For  VeriLens**:
+If this incident becomes public, it will harm the company’s image and cause current or potential partners to move to more secure companies, resulting in both reputational and financial losses.
+
+**For  government and society**:
+Since the government is also the customer of this system, its data may be stolen, leading to information leakage and allowing attackers to spread rumors that lower public trust.
+
+**For various companies involved in the system**:
+Attackers can use stolen identities to acquire information and sell it to competitors, putting these companies at a disadvantage in the market.
+
+---
+
+###  Threat 2: Malicious Insider Reusing Admin Credentials
+**For Individuals**:
+If malicious insiders use admin credentials to access user data, it may lead to personal information being leaked, and the attacker might even collect and sell user data for illegal profit.
+
+**For  VeriLens**:
+This could trigger internal investigations to determine how many individuals were involved and might lead to legal disputes. Once the incident becomes public, the company's social influence would decline, and trust in VeriLens would drop, negatively affecting its business operations and revenue.
+
+**For  government and society**:
+When such security incidents are exposed publicly, they undermine public trust in relevant institutions or technology platforms, like VeriLens, especially in sectors handling sensitive information. If the leaked data contains sensitive political or social details, it could draw significant public attention and even lead to social unrest.
+
+**For various companies involved in the system**:
+Since companies within the system rely on the VeriLens platform for services, malicious insider actions could cause sensitive data leaks across these organizations. As a result, clients may terminate their partnerships due to privacy concerns, putting these companies at a competitive disadvantage.
+
+### Threat 3: Fake Web Frontend for Phishing
+**For Individuals**:
+Users' account credentials are likely to be stolen, allowing attackers to log in and steal personal data and uploaded files; if the user is a paying customer, the attacker can directly access premium features, thereby harming the user's interests.
+
+**For  VeriLens**:
+If this phishing attack is exposed, it will severely damage VeriLens's brand reputation and user trust, leading to customer loss and a decline in business.
+
+**For  government and society**:
+If attackers use the fake website to steal information related to government or public institutions, it will undermine public trust in digital platforms and government bodies, potentially leading to social instability.
+
+**For various companies involved in the system**:
+Since companies rely on the VeriLens platform for services, falling for a phishing website may lead to the leakage of their customer data and proprietary information, causing them to lose clients and market share.
