@@ -451,3 +451,205 @@ The attacker intercepts and forges a fake "payment success" response from the bi
 Multiple reports across Stripe and PayPal communities have exposed weaknesses where fake client-side responses granted users unauthorized access to premium features in single-page applications.
 
 ---
+
+## TASK 3
+
+---
+
+### Threat 1: Token Reuse via Phishing
+
+**For Individuals**:
+Attackers can steal user information, such as uploaded photos and account details, and for paying users, this may lead to unauthorized actions that cause direct financial loss.
+
+**For  VeriLens**:
+If this incident becomes public, it will harm the company’s image and cause current or potential partners to move to more secure companies, resulting in both reputational and financial losses.
+
+**For  government and society**:
+Since the government is also the customer of this system, its data may be stolen, leading to information leakage and allowing attackers to spread rumors that lower public trust.
+
+**For various companies involved in the system**:
+Attackers can use stolen identities to acquire information and sell it to competitors, putting these companies at a disadvantage in the market.
+
+---
+
+### Threat 2: Malicious Insider Reusing Admin Credentials
+
+**For Individuals**:
+If malicious insiders use admin credentials to access user data, it may lead to personal information being leaked, and the attacker might even collect and sell user data for illegal profit.
+
+**For  VeriLens**:
+This could trigger internal investigations to determine how many individuals were involved and might lead to legal disputes. Once the incident becomes public, the company's social influence would decline, and trust in VeriLens would drop, negatively affecting its business operations and revenue.
+
+**For  government and society**:
+When such security incidents are exposed publicly, they undermine public trust in relevant institutions or technology platforms, like VeriLens, especially in sectors handling sensitive information. If the leaked data contains sensitive political or social details, it could draw significant public attention and even lead to social unrest.
+
+**For various companies involved in the system**:
+Since companies within the system rely on the VeriLens platform for services, malicious insider actions could cause sensitive data leaks across these organizations. As a result, clients may terminate their partnerships due to privacy concerns, putting these companies at a competitive disadvantage.
+
+### Threat 3: Fake Web Frontend for Phishing
+
+**For Individuals**:
+Users' account credentials are likely to be stolen, allowing attackers to log in and steal personal data and uploaded files; if the user is a paying customer, the attacker can directly access premium features, thereby harming the user's interests.
+
+**For  VeriLens**:
+If this phishing attack is exposed, it will severely damage VeriLens's brand reputation and user trust, leading to customer loss and a decline in business.
+
+**For  government and society**:
+If attackers use the fake website to steal information related to government or public institutions, it will undermine public trust in digital platforms and government bodies, potentially leading to social instability.
+
+**For various companies involved in the system**:
+Since companies rely on the VeriLens platform for services, falling for a phishing website may lead to the leakage of their customer data and proprietary information, causing them to lose clients and market share.
+
+### Threat 8: Administrator Modifies Model Without Leaving a Trace
+
+**Impact on individual users**:
+If an internal administrator covertly modifies the verification model so that the system always incorrectly returns "real," individual users might receive false verification results. This could lead them to believe that altered or fabricated content is genuine, causing them to make poor decisions and potentially face negative legal or safety consequences.
+
+**Impact on VeriLens**:
+Such behavior directly undermines the system's integrity and accountability mechanisms, severely damaging VeriLens's reputation. Once the internal tampering is discovered, it may trigger a user trust crisis and lead to numerous disputes, legal actions, and costly remediation efforts.
+
+**Impact on government and society**:
+If government or public institutions rely on the system for media verification and the model is altered to always return incorrect results, important information might be misjudged. This could erode public trust in government communications and public institutions, potentially sparking public unrest and weakening overall information security.
+
+**Impact on the various companies involved in the system**:
+Companies that depend on the VeriLens platform for verifying sensitive content may experience data misinterpretation and unclear accountability if the verification model is maliciously modified. This puts partner companies at risk of making poor decisions and can harm their competitive position.
+
+### Threat 9: User Denies Payment Request or Subscription Upgrade
+
+**Impact on individual users**:
+Paying users who deny authorizing a payment request or subscription upgrade may exploit this loophole to avoid their financial responsibilities, leading to transaction disputes. In the absence of sufficient evidence, they might not be held accountable, potentially harming their credit records and legal rights.
+
+**Impact on VeriLens**:
+Due to the lack of detailed payment logs and secondary confirmation mechanisms, if a user denies a payment request, VeriLens may find it difficult to prove the transaction's validity. This could result in financial losses, legal disputes, and a loss of customer trust, severely affecting the platform’s reputation and operational stability.
+
+**Impact on government and society**:
+If such payment disputes occur frequently, public trust in digital payment systems may be undermined, affecting the overall security of online transactions. This could prompt regulators to enforce stricter payment security standards and enhanced consumer protection measures.
+
+**Impact on the various companies involved in the system**:
+If payment disputes are not properly resolved, service providers might suspend or limit advanced features for business accounts. Such disruptions could adversely affect the companies' business processes and decision-making support, putting them at a competitive disadvantage.
+
+### Threat 10: Man-in-the-Middle Attack Capturing Authentication Token
+
+**Impact on individual users**:
+When users log in over an insecure network, attackers may intercept their tokens and hijack sessions. This can lead to leakage of sensitive personal information and misuse of their accounts, severely endangering their privacy and security.
+
+**Impact on VeriLens**:
+If sessions are hijacked, the authentication mechanism and data protection measures of VeriLens are directly compromised. This weakens the platform’s security and may trigger a large-scale crisis of user trust, legal risks, and destabilize operations.
+
+**Impact on government and society**:
+Frequent network eavesdropping incidents will make people lose trust in digital security measures. This can hurt the reputation and authority of the government and public institutions in cybersecurity, and may raise concerns about weak network regulation and create social unease.
+
+**Impact on the various companies involved in the system**:
+Once a session is hijacked, attackers may carry out unauthorized actions, leading to service disruptions or erroneous data transmission. Such interruptions not only affect the daily business processes of these companies but may also result in economic losses and additional remediation costs.
+
+### Threat 11: Unencrypted Storage of Verification Results and User Upload History
+
+**Impact on individual users**:
+If an attacker breaches the database and steals user-uploaded media and verification results, the unencrypted sensitive information can be easily exposed, potentially leading to identity misuse and other security risks.
+
+**Impact on VeriLens**:
+A database breach directly undermines VeriLens's data confidentiality and security, resulting in extensive leakage of user data. This can trigger a crisis of user trust, legal disputes, and costly remediation efforts, severely damaging the company’s brand reputation and operational stability.
+
+**Impact on government and society**:
+Once data containing sensitive information is leaked, public confidence in the digital platform and the government’s ability to protect data is greatly diminished. This not only weakens the credibility of government and public institutions but also may spark concerns about inadequate cybersecurity regulation, leading to social unrest.
+
+**Impact on the various companies involved in the system**:
+If an attacker accesses user-uploaded media and verification results stored in the database without encryption, this confidential information will be directly exposed to unauthorized parties, compromising both user privacy and trade secrets, and ultimately harming the business interests of the involved companies.
+
+### Threat 12: Web Frontend Exposes Verification Logs and Other User Data
+
+**Impact on individual users**:
+If the frontend accidentally exposes internal logs or other user data, sensitive personal information and verification history may be accessed by unauthorized parties. This not only violates personal privacy but also increases the risk of identity theft and other security breaches.
+
+**Impact on VeriLens**:
+The accidental disclosure of internal logs and sensitive data directly undermines VeriLens's security and data confidentiality, eroding user trust in the platform. Once such an incident is revealed, it could lead to numerous user complaints and legal disputes, as well as incur high remediation and recovery costs.
+
+**Impact on government and society**:
+Leaked data may be exploited by criminals for intelligence gathering or targeted attacks, particularly in politically sensitive or high-risk security domains. The exposed verification records might reveal details about sensitive operations, increasing national cybersecurity risks. Additionally, attackers could misuse the leaked information by analyzing users' verification histories to spread misinformation or create chaos, thereby affecting public opinion and social stability.
+
+**Impact on the various companies involved in the system**:
+The disclosed debug information and logs may contain detailed insights into the system's internal operations, providing attackers with clues for further breaches. This increases the risk of larger-scale attacks that could compromise the security and competitiveness of companies relying on the VeriLens platform.
+
+### Threat 13: Mass Upload Flooding the Verification Queue
+
+**Impact on individual users**:
+If the verification system is overwhelmed by a flood of malicious upload requests, ordinary users will experience long delays or even be unable to receive service when submitting genuine media for verification. This severely undermines user experience and decreases trust and satisfaction with the platform.
+
+**Impact on VeriLens**:
+When attackers compromise the system's availability, VeriLens may fail to provide timely service to its users, triggering a surge in complaints and customer loss. Furthermore, service disruptions can damage the company's image, weaken its competitive position in the market, and force the company to invest extra resources in system repair and protection.
+
+**Impact on government and society**:
+If the system is disrupted due to an attack, verification delays may affect the government's ability to assess information and make timely decisions during crises. During such service interruptions or delays, attackers may seize the opportunity to spread unverified media content, making it harder for the public to distinguish between real and fake information, thereby exacerbating the spread of misinformation and public confusion.
+
+**Impact on the various companies involved in the system**:
+This threat could result in significant consumption of computing resources due to the sudden surge in load, potentially leading to higher costs and increased management pressures if resources are not allocated efficiently.
+
+### Threat 14: Resource Exhaustion via Model Path Manipulation
+
+**Impact on individual users**:
+If an attacker uses carefully crafted media files to trigger high-cost computation paths in the verification model, ordinary users may face long delays or service disruptions when submitting verification requests. This can prevent them from receiving timely verification results, thereby affecting their daily experience and reliance on the platform.
+
+**Impact on VeriLens**:
+A resource exhaustion attack can cause the verification engine’s GPU and other computing resources to be monopolized by a single task, leading to overall system performance degradation or partial service outages. This not only triggers a surge in user complaints and service disruptions but may also force the company to invest additional resources in protection and repair, severely undermining the platform's market competitiveness and brand reputation.
+
+**Impact on government and society**:
+In cases where government and public institutions rely on the platform for information verification, a resource exhaustion attack could result in delayed verifications, thereby affecting information collection and decision-making efficiency during emergencies. Moreover, during service outages, attackers may exploit the situation to spread malicious information, further intensifying public concerns over inadequate cybersecurity regulation and causing social unrest.
+
+**Impact on the various companies involved in the system**:
+Companies that depend on the VeriLens platform for verification services may face risks of slow system responses or service interruptions. This can disrupt business processes and incur additional management and operational costs, ultimately affecting these companies' performance in a highly competitive market.
+
+### Threat 15: Repeated Payment API Calls Causing Billing Disruption
+
+**Impact on individual users**:
+If repeated payment API calls disrupt billing processes, users may be unable to complete subscription upgrades or payments, preventing them from accessing premium services. Additionally, the system’s erratic behavior might lead to users being mistakenly flagged as malicious, possibly resulting in temporary account suspensions or other inconveniences that negatively impact their experience and trust.
+
+**Impact on VeriLens**:
+Frequent payment API calls causing billing disruptions can create chaos in the billing service, imposing extra operational and security burdens on VeriLens. Poor error handling and system instability not only damage the platform's reputation but may also lead to reconciliation issues and legal disputes,
+
+**Impact on government and society**:
+If such issues occur repeatedly, public confidence in online payment systems may be undermined, prompting regulators to enforce stricter digital payment security measures. Moreover, widespread concerns might arise about the potential impact of similar disruptions on other critical payment infrastructures, heightening societal unease regarding cybersecurity
+
+**Impact on the various companies involved in the system**:
+Due to malicious traffic causing billing services and front-end applications to malfunction, companies may face overall system performance issues or some services not working properly. This disruption can affect the user experience, lead to a loss of trust in the platform, and indirectly impact the company’s market share and competitiveness.
+
+### Threat 16: Free User Gains Access to Premium Features via API Tampering
+
+**Impact on individual users**:
+Free-tier users who manipulate API requests to access premium features gain an unfair advantage, which may lead to account management issues and risks of system misuse, potentially compromising their own security.
+
+**Impact on VeriLens**:
+This unauthorized behavior undermines the platform's access control mechanisms and revenue model, potentially resulting in lost revenue from users who should have upgraded, while also damaging the platform's reputation.
+
+**Impact on government and society**:
+If a large number of free-tier users exploit premium features illegally, public trust in online subscription and payment systems may be undermined, raising concerns about digital payment security and insufficient regulatory measures.
+
+**Impact on the various companies involved in the system**:
+Companies that rely on VeriLens for paid services may find that the platform's fairness and data integrity are compromised, leading to challenges in maintaining service quality and ultimately causing partners to lose confidence in the platform.
+
+### Threat 17: AI Engine Service Account Misused to Access the Database
+
+**Impact on individual users**:
+If an internal attacker or a compromised internal process uses the AI engine’s service account to access the database, sensitive user data (such as personal identity information and account records) may be illegally read or altered. This could lead to privacy breaches, identity misuse, and even financial losses along with other security risks.
+
+**Impact on VeriLens**:
+Abuse of the service account’s privileges will directly undermine the platform’s data confidentiality and integrity. The leakage or tampering of large amounts of user data could trigger a crisis of user trust, result in legal actions, and incur high remediation costs, thereby severely damaging VeriLens's brand reputation and operational stability.
+
+**Impact on government and society**:
+If sensitive data is misused or leaked, public confidence in digital platforms and the ability of the government to protect data and ensure cybersecurity will be greatly diminished. The leaked information could be exploited for criminal activities or political manipulation, exacerbating concerns over inadequate cybersecurity regulation and posing a threat to social stability and public safety.
+
+**Impact on the various companies involved in the system**:
+Companies that rely on the VeriLens platform may face risks of having their trade secrets and customer data leaked. Such breaches would undermine the trust between enterprises and potentially damage existing partnerships.
+
+### Threat 18: Faked Stripe Response Grants User Premium Status
+
+**Impact on individual users**:
+If free-tier users forge a payment success response to gain premium status, they may improperly access advanced features. While this might seem beneficial to the individual, such behavior can lower account security. If the platform later investigates, the user could face penalties or account suspension, undermining both personal account management and trust in the platform.
+
+**Impact on VeriLens**:
+Forging payment responses to obtain elevated privileges undermines the platform's access control mechanisms and payment verification process. This not only results in lost revenue from users who should upgrade, but it also weakens data integrity and overall security. Once such vulnerabilities are exposed, they can trigger a crisis of user trust, legal disputes, and high remediation costs, severely damaging VeriLens's brand reputation and business operations.
+
+**Impact on government and society**:
+If similar payment verification vulnerabilities become frequent, public trust in online payment systems and digital service platforms will decline significantly. This may prompt regulators to impose stricter controls on payment processes and data security. Meanwhile, criminals might exploit the vulnerability for large-scale fraud, which could, in turn, influence public policy decisions and threaten social stability.
+
+**Impact on the various companies involved in the system**:
+Companies relying on VeriLens to deliver premium services will be indirectly affected. Unauthorized access to premium features undermines confidence in the platform's security and reliability, potentially leading to broken partnerships or customer loss. This erosion of trust can ultimately reduce these companies' competitiveness and negatively impact their overall business performance.
