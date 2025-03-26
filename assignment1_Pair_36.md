@@ -500,6 +500,20 @@ If attackers use the fake website to steal information related to government or 
 **For various companies involved in the system**:
 Since companies rely on the VeriLens platform for services, falling for a phishing website may lead to the leakage of their customer data and proprietary information, causing them to lose clients and market share.
 
+### Threat 7: User Denies Uploading Sensitive Media
+
+**Impact on individual users**:
+Without proper evidence, individuals may evade responsibility for their actions and even avoid legal punishment, even if the uploaded media serves as key evidence.
+
+**Impact on VeriLens**:
+The absence of effective non-repudiation mechanisms will severely harm VeriLens's reputation. If users can later deny their uploads, audit trails fail, leading to increased disputes, higher operational costs, and potential legal action, thereby damaging the company’s brand image and business stability.
+
+**Impact on government and society**:
+When sensitive media cannot be accurately attributed, public trust in digital verification platforms decreases. This situation may affect the dissemination of government information and undermine the authority of public institutions, ultimately eroding confidence in official statements and policies.
+
+**Impact on the various companies involved in the system**:
+Companies relying on the VeriLens platform for media verification will struggle to determine the authenticity of data and assign responsibility in upload disputes. Without reliable audit trails for sensitive data, these companies may lose customer trust and shift to more secure, reliable alternatives, impacting their competitiveness in the market.
+
 ### Threat 8: Administrator Modifies Model Without Leaving a Trace
 
 **Impact on individual users**:
